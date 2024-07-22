@@ -7,18 +7,19 @@ faqItems.forEach(item => {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    const selectElements = document.querySelectorAll('.apply__form-select');
+    const formElements = document.querySelectorAll('.apply__form-select, .apply__form-block input');
     function updateClass(event) {
-        const selectElement = event.target;
-        if (selectElement.value) {
-            selectElement.classList.add('active');
+        const element = event.target;
+        if (element.value) {
+            element.classList.add('active');
         } else {
-            selectElement.classList.remove('active');
+            element.classList.remove('active');
         }
     }
-    selectElements.forEach(select => {
-        select.addEventListener('change', updateClass);
-                updateClass({ target: select });
+    formElements.forEach(element => {
+        element.addEventListener('change', updateClass);
+        element.addEventListener('input', updateClass); 
+        updateClass({ target: element });
     });
 });
 
