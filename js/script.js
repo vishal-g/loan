@@ -70,19 +70,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     const popupBtn = document.querySelectorAll('.popup-btn');
-    const applyonline = document.querySelector('.applyonline');
-    popupBtn.forEach(btn => {
-        btn.addEventListener('click', function() {
-            applyonline.classList.toggle('active');
-            body.classList.toggle('no-scroll');
+    if(popupBtn){
+        const applyonline = document.querySelector('.applyonline');
+        const applyonlineClose = document.querySelector('.applyonline__close');
+        popupBtn.forEach(btn => {
+            btn.addEventListener('click', function() {
+                applyonline.classList.add('active');
+                body.classList.add('no-scroll');
+            });
         });
-    });
-
-
-
-
+        applyonlineClose.addEventListener('click', function() {
+            applyonline.classList.remove('active');
+            body.classList.remove('no-scroll');
+        });
+    }
     const selects = document.querySelectorAll('.custom-select');
-
     if(selects){
         selects.forEach(select => {
             const selected = select.querySelector('.select-selected');
