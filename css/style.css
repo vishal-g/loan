@@ -378,30 +378,23 @@ html,body{
 .rotate-animation {
     position: absolute;
     animation: rotatePath 1.5s infinite alternate;
-    bottom: -3px;
+    transform: rotate(-70deg);
+    bottom: -4px;
     animation-delay: 1s;
 }
 @keyframes rotatePath {
     0% {
-        transform: rotate(0deg);
+        transform: rotate(-70deg);
     }
     25% {
-        transform: rotate(0deg);
+        transform: rotate(-70deg);
     }
     75% {
-        transform: rotate(64deg) translate(2px, -2px)
+        transform: rotate(70deg) translate(2px, -2px)
     }
     100% {
-        transform: rotate(64deg) translate(2px, -2px)
+        transform: rotate(70deg) translate(2px, -2px)
     }
-}
-.rotate-animation path,
-.rotate-animation ~ svg path{
-    fill: #5AAB61;
-}
-.rotate-animation.animate-off path,
-.rotate-animation.animate-off ~ svg path{
-    fill: #0070E0;
 }
 .header__box-calc{
     color: #0070E0;
