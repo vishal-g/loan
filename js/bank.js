@@ -62,3 +62,24 @@ window.addEventListener('resize', createDocumentBlocks);
 createDocumentBlocks();
 
 
+
+
+
+document.querySelectorAll('.we__item-btn').forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+        const videoBanner = document.querySelectorAll('.videobanner-video')[index];
+        videoBanner.classList.add('active');
+        document.body.classList.add('no-scroll');
+    });
+});
+
+document.querySelectorAll('.videobanner__close').forEach((closeBtn, index) => {
+    closeBtn.addEventListener('click', () => {
+        const videoBanner = document.querySelectorAll('.videobanner-video')[index];
+        const video = videoBanner.querySelector('video');
+        videoBanner.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+        video.pause();
+        video.currentTime = 0;
+    });
+});

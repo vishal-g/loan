@@ -4551,6 +4551,8 @@ main.main{
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 80px;
+    min-width: 80px;
 }
 .cards-about__title{
     font-weight: 600;
@@ -4620,11 +4622,14 @@ li.cards-about__descr::before{
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
 }
-.find__content .find__item:nth-of-type(n+7){
+.find__content.all .find__item:nth-of-type(n+7){
     display: none;
 }
-.find__content.active .find__item{
-    display: block;    
+.find__content.all.active .find__item{
+    display: block;
+}
+.find__content.all ~ .find__more {
+    display: block;
 }
 .find__content.active ~ .find__more{
     display: none;
@@ -4699,7 +4704,7 @@ li.cards-about__descr::before{
     line-height: 33.6px;
     position: relative;
     width: max-content;
-    display: block;
+    display: none;
     background-color: transparent;
     cursor: pointer;
     outline: none;
@@ -4715,6 +4720,16 @@ li.cards-about__descr::before{
     right: 0;
     bottom: -6px;
 }
+.find__item {
+    display: none;
+}
+.find__item.active {
+    display: block;
+}
+.find__btn.active {
+    font-weight: bold;
+}
+
 @media (max-width: 1000px) {
     .cards__inner::after {
         background-position: calc(100% - -270px) center;
@@ -4764,6 +4779,11 @@ li.cards-about__descr::before{
     .cards-about__item{
         gap: 17px;
         align-items: start;
+    }
+    .cards-about__icon{
+        width: 50px;
+        min-width: 50px;
+        height: 50px;
     }
     .cards-about__icon svg{
         max-width: 37px;
@@ -4833,14 +4853,6 @@ li.cards-about__descr::before{
         width: 106px;
         height: 36px;
         line-height: 12px;
-    }
-    .find__item.active .find__item-image::before{
-        opacity: 1;
-    }
-    .find__item.active .find__item-image .find__item-more {
-        opacity: 1;
-        pointer-events: all;
-        transform: translate(-50%, -50%) scale(1);
     }
 }
 .axix{
@@ -5306,6 +5318,8 @@ li.cards-about__descr::before{
     background-position: right 15px center;
     background-repeat: no-repeat, repeat;
     background-size: 15px 9px;
+    display: flex;
+    align-items: center;
 }
 .cibil__otp-input{
     width: 100%;
@@ -5314,6 +5328,43 @@ li.cards-about__descr::before{
 .cibil__form-select{
     width: 100%;
     max-width: 357px;
+}
+.select-selected.cibil__form-select.select-arrow-active{
+    border-radius: 5.79px 5.79px 0 0;
+}
+.select-selected.cibil__form-select.select-arrow-active{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='10' viewBox='0 0 17 10' fill='none'%3E%3Cpath d='M15.4435 8.83203L8.4952 1.85868L1.54688 8.83203' stroke='%236C6C6C' stroke-width='1.73708' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");;
+}
+.custom-select {
+    position: relative;
+    width: 100%;
+    max-width: 357px;
+}
+.select-items div {
+    padding: 10px;
+    color: #383A3E;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32.426px; /* 180.142% */
+    border: 1.158px solid #CBD4E1;
+    border-top: none;
+    cursor: pointer;
+}
+.select-items div:hover {
+    background-color: #ddd;
+}
+.select-hide {
+    display: none;
+}
+
+.select-items {
+    background-color: #fff;
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    box-sizing: border-box;
 }
 .cibil__top{
     display: flex;
@@ -5440,6 +5491,10 @@ li.cards-about__descr::before{
     .cibil__otp-sended{
         width: 100%;
     }
+    .custom-select,
+    .cibil__form-select{
+        max-width: 100%;
+    }
 }
 @media (max-width: 660px) {
     .cibil-banner .banner__inner{
@@ -5509,5 +5564,9 @@ li.cards-about__descr::before{
     .cibil__otp-item:last-of-type{
         flex-direction: row;
         gap: 34px;
+    }
+    .select-items div{
+        font-size: 14px;
+        line-height: 32.4px;
     }
 }

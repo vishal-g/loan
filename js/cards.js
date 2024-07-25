@@ -1,30 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const findItems = document.querySelectorAll('.find__item');
-    findItems.forEach(function(findItem) {
-        const findItemImage = findItem.querySelector('.find__item-image');
-        findItemImage.addEventListener('click', function() {
-            if (window.innerWidth < 481) {
-                if (findItem.classList.contains('active')) {
-                    findItem.classList.remove('active');
-                } else {
-                    findItems.forEach(function(item) {
-                        item.classList.remove('active');
-                    });
-                    findItem.classList.add('active');
-                }
-            } else {
-                findItem.classList.remove('active');
-            }
-        });
-    });
-    window.addEventListener('resize', function() {
-        findItems.forEach(function(findItem) {
-            if (window.innerWidth >= 500) {
-                findItem.classList.remove('active');
-            }
-        });
-    });
-
     const faqItems = document.querySelectorAll('.faq__item');
     faqItems.forEach(item => {
         const top = item.querySelector('.faq__item-top');
@@ -70,22 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     updateActiveSlide();
 
-    const axixLeftBtns = document.querySelectorAll('.axix__left-btn');
-    const findItemMores = document.querySelectorAll('.find__item-more');
-    const applyonline = document.querySelector('.applyonline');
-    const axix = document.querySelector('.axix');
-    const body = document.querySelector('.body');
-    axixLeftBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            applyonline.classList.add('active');
-        });
-    });
-    findItemMores.forEach(item => {
-        item.addEventListener('click', function() {
-            axix.classList.add('active');
-            body.classList.add('no-scroll');
-        });
-    });
+
     
 
     const formElements = document.querySelectorAll('.apply__form-select, .apply__form-block input');
@@ -102,4 +61,42 @@ document.addEventListener('DOMContentLoaded', function() {
         element.addEventListener('input', updateClass); 
         updateClass({ target: element });
     });
+
+
+
+
+    const buttons = document.querySelectorAll('.find__btn');
+    const items = document.querySelectorAll('.find__item');
+    const content = document.querySelector('.find__content');
+
+    function filterItems(filter) {
+        buttons.forEach(btn => btn.classList.remove('active'));
+        items.forEach(item => item.classList.remove('active'));
+        content.classList.remove('all');
+        content.classList.remove('active');
+
+        if (filter === 'all') {
+            content.classList.add('all');
+            items.forEach(item => item.classList.add('active'));
+        } else {
+            items.forEach(item => {
+                if (item.getAttribute('data-name') === filter) {
+                    item.classList.add('active');
+                }
+            });
+        }
+    }
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-name');
+            button.classList.add('active');
+            filterItems(filter);
+        });
+    });
+    const allButton = document.querySelector('.find__btn[data-name="all"]');
+    if (allButton) {
+        allButton.click();
+    }
+
 });
