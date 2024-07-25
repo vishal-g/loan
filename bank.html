@@ -685,22 +685,28 @@
                                 <label for="email-id" class="input-label">Email Id<span class="required">*</span></label>
                             </div>
                             <div class="apply__form-block">
-                                <select class="apply__form-select" name="category">
-                                    <option value="" disabled selected>Category*</option>
-                                    <option value="value1">Category 1</option>
-                                    <option value="value2">Category 2</option>
-                                    <option value="value3">Category 3</option>
-                                </select>
-                                <label for="category" class="input-label">Category<span class="required">*</span></label>
+                                <div class="custom-select">
+                                    <div class="select-selected apply__form-select">Category <span>*</span></div>
+                                    <div class="select-items select-hide">
+                                        <div data-value="">Loan Type</div>
+                                        <div data-value="value1">Loan type 1</div>
+                                        <div data-value="value2">Loan type 2</div>
+                                        <div data-value="value3">Loan type 3</div>
+                                    </div>
+                                    <input type="hidden" name="loan-type" value="">
+                                </div>
                             </div>
                             <div class="apply__form-block">
-                                <select class="apply__form-select" name="property-type" required>
-                                    <option value="" disabled selected>Property Type*</option>
-                                    <option value="value1">Property type 1</option>
-                                    <option value="value2">Property type 2</option>
-                                    <option value="value3">Property type 3</option>
-                                </select>
-                                <label for="property-type" class="input-label">Property Type<span class="required">*</span></label>
+                                <div class="custom-select">
+                                    <div class="select-selected apply__form-select">Property Type<span>*</span></div>
+                                    <div class="select-items select-hide">
+                                        <div data-value="">Loan Type</div>
+                                        <div data-value="value1">Loan type 1</div>
+                                        <div data-value="value2">Loan type 2</div>
+                                        <div data-value="value3">Loan type 3</div>
+                                    </div>
+                                    <input type="hidden" name="loan-type" value="">
+                                </div>
                             </div>
                             <div class="apply__form-block">
                                 <label for="amount-required" class="input-label">Amount Required<span class="required">*</span></label>
