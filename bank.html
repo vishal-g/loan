@@ -74,13 +74,13 @@
                     <div class="header__box-know">
                         <div class="header__know-animate">
                             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none" class="rotate-animation">
-                                <path d="M7.57422 2.00259C7.87886 3.00831 8.19759 4.01084 8.48108 5.02134C8.92281 6.58246 9.34246 8.14577 9.75859 9.70988C9.86569 10.1093 9.95963 10.5146 9.99437 10.9248C10.0912 12.0617 8.92726 12.9927 7.43127 12.9999C5.94422 13.0107 4.80298 12.0848 5.02851 10.9536C5.29824 9.61874 5.64951 8.28793 6.00971 6.9607C6.45744 5.30785 6.95052 3.66438 7.42574 2.01373C7.47343 2.00855 7.52559 2.00517 7.57328 2L7.57422 2.00259Z" fill="#FFD140"/>
+                                <path d="M7.57422 2.00259C7.87886 3.00831 8.19759 4.01084 8.48108 5.02134C8.92281 6.58246 9.34246 8.14577 9.75859 9.70988C9.86569 10.1093 9.95963 10.5146 9.99437 10.9248C10.0912 12.0617 8.92726 12.9927 7.43127 12.9999C5.94422 13.0107 4.80298 12.0848 5.02851 10.9536C5.29824 9.61874 5.64951 8.28793 6.00971 6.9607C6.45744 5.30785 6.95052 3.66438 7.42574 2.01373C7.47343 2.00855 7.52559 2.00517 7.57328 2L7.57422 2.00259Z" fill="#2F2F2F"/>
                             </svg>
                             <svg xmlns="http://www.w3.org/2000/svg" width="38" height="22" viewBox="0 0 38 22" fill="none">
-                                <path d="M33.0389 6.17676C36.243 9.78507 37.9216 13.9866 37.9999 18.8694H31.2852C31.2168 15.8576 30.2487 13.1815 28.3027 10.9161C29.8771 9.33852 31.4352 7.78045 33.0356 6.17676H33.0389Z" fill="#FFD140" class="color-animation"/>
-                                <path d="M4.96103 6.17676C1.75689 9.78833 0.078229 13.9866 0 18.8727H6.71466C6.78311 15.8609 7.7512 13.1848 9.69714 10.9194C8.12278 9.34177 6.56472 7.78371 4.96429 6.18002L4.96103 6.17676Z" fill="#FFD140" class="color-animation"/>
+                                <path d="M33.0389 6.17676C36.243 9.78507 37.9216 13.9866 37.9999 18.8694H31.2852C31.2168 15.8576 30.2487 13.1815 28.3027 10.9161C29.8771 9.33852 31.4352 7.78045 33.0356 6.17676H33.0389Z" fill="#5AAB61" class="color-animation"/>
+                                <path d="M4.96103 6.17676C1.75689 9.78833 0.078229 13.9866 0 18.8727H6.71466C6.78311 15.8609 7.7512 13.1848 9.69714 10.9194C8.12278 9.34177 6.56472 7.78371 4.96429 6.18002L4.96103 6.17676Z" fill="#E82B3F" class="color-animation"/>
                                 <path d="M10.991 9.7004C9.4101 8.113 7.85203 6.55168 6.27441 4.96754C9.6513 1.92965 13.6084 0.267283 18.2043 0V6.7277C15.4794 6.94935 13.0608 7.93047 10.991 9.7004Z" fill="#FFD140" class="color-animation"/>
-                                <path d="M31.8326 4.98058C30.2322 6.57776 28.6807 8.1293 27.1063 9.70692C25.0365 7.92395 22.6114 6.95261 19.8799 6.73096V0C24.4661 0.264023 28.4264 1.91335 31.8326 4.98058Z" fill="#FFD140" class="color-animation"/>
+                                <path d="M31.8326 4.98058C30.2322 6.57776 28.6807 8.1293 27.1063 9.70692C25.0365 7.92395 22.6114 6.95261 19.8799 6.73096V0C24.4661 0.264023 28.4264 1.91335 31.8326 4.98058Z" fill="#9ACC2D" class="color-animation"/>
                             </svg>
                         </div>
                         Know your CIBIL for FREE
@@ -685,22 +685,28 @@
                                 <label for="email-id" class="input-label">Email Id<span class="required">*</span></label>
                             </div>
                             <div class="apply__form-block">
-                                <select class="apply__form-select" name="category">
-                                    <option value="" disabled selected>Category*</option>
-                                    <option value="value1">Category 1</option>
-                                    <option value="value2">Category 2</option>
-                                    <option value="value3">Category 3</option>
-                                </select>
-                                <label for="category" class="input-label">Category<span class="required">*</span></label>
+                                <div class="custom-select">
+                                    <div class="select-selected apply__form-select">Category <span>*</span></div>
+                                    <div class="select-items select-hide">
+                                        <div data-value="">Loan Type</div>
+                                        <div data-value="value1">Loan type 1</div>
+                                        <div data-value="value2">Loan type 2</div>
+                                        <div data-value="value3">Loan type 3</div>
+                                    </div>
+                                    <input type="hidden" name="loan-type" value="">
+                                </div>
                             </div>
                             <div class="apply__form-block">
-                                <select class="apply__form-select" name="property-type" required>
-                                    <option value="" disabled selected>Property Type*</option>
-                                    <option value="value1">Property type 1</option>
-                                    <option value="value2">Property type 2</option>
-                                    <option value="value3">Property type 3</option>
-                                </select>
-                                <label for="property-type" class="input-label">Property Type<span class="required">*</span></label>
+                                <div class="custom-select">
+                                    <div class="select-selected apply__form-select">Property Type<span>*</span></div>
+                                    <div class="select-items select-hide">
+                                        <div data-value="">Loan Type</div>
+                                        <div data-value="value1">Loan type 1</div>
+                                        <div data-value="value2">Loan type 2</div>
+                                        <div data-value="value3">Loan type 3</div>
+                                    </div>
+                                    <input type="hidden" name="loan-type" value="">
+                                </div>
                             </div>
                             <div class="apply__form-block">
                                 <label for="amount-required" class="input-label">Amount Required<span class="required">*</span></label>
@@ -970,6 +976,17 @@
                         </div>
                         <p class="we__item-name">Shrushti Shah</p>
                         <p class="we__item-descr">Marketing Manager</p>
+                        <div class="videobanner-video">
+                            <div class="videobanner-content">
+                                <video src="video/1.mp4" muted controls></video>
+                                <div class="videobanner__close">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
+                                        <path d="M0.94118 0.45305C1.3317 0.0625252 1.96487 0.0625252 2.35539 0.45305L20.0331 18.1307C20.4236 18.5212 20.4236 19.1544 20.0331 19.5449C19.6425 19.9355 19.0094 19.9355 18.6189 19.5449L0.941179 1.86726C0.550655 1.47674 0.550655 0.843574 0.94118 0.45305Z" fill="white"/>
+                                        <path d="M0.933518 19.5488C0.542994 19.1582 0.542994 18.5251 0.933518 18.1345L18.6112 0.456871C19.0017 0.0663466 19.6349 0.0663471 20.0254 0.456871C20.4159 0.847396 20.4159 1.48056 20.0254 1.87108L2.34773 19.5488C1.95721 19.9393 1.32404 19.9393 0.933518 19.5488Z" fill="white"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="we__item">
                         <div class="we__item-top">
@@ -987,6 +1004,17 @@
                         </div>
                         <p class="we__item-name">Amit Dubey</p>
                         <p class="we__item-descr">Head of Admin </p>
+                        <div class="videobanner-video">
+                            <div class="videobanner-content">
+                                <video src="video/1.mp4" muted controls></video>
+                                <div class="videobanner__close">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
+                                        <path d="M0.94118 0.45305C1.3317 0.0625252 1.96487 0.0625252 2.35539 0.45305L20.0331 18.1307C20.4236 18.5212 20.4236 19.1544 20.0331 19.5449C19.6425 19.9355 19.0094 19.9355 18.6189 19.5449L0.941179 1.86726C0.550655 1.47674 0.550655 0.843574 0.94118 0.45305Z" fill="white"/>
+                                        <path d="M0.933518 19.5488C0.542994 19.1582 0.542994 18.5251 0.933518 18.1345L18.6112 0.456871C19.0017 0.0663466 19.6349 0.0663471 20.0254 0.456871C20.4159 0.847396 20.4159 1.48056 20.0254 1.87108L2.34773 19.5488C1.95721 19.9393 1.32404 19.9393 0.933518 19.5488Z" fill="white"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="we__item">
                         <div class="we__item-top">
@@ -1004,6 +1032,17 @@
                         </div>
                         <p class="we__item-name">Sakshi Patil</p>
                         <p class="we__item-descr">Bank Executive</p>
+                        <div class="videobanner-video">
+                            <div class="videobanner-content">
+                                <video src="video/1.mp4" muted controls></video>
+                                <div class="videobanner__close">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
+                                        <path d="M0.94118 0.45305C1.3317 0.0625252 1.96487 0.0625252 2.35539 0.45305L20.0331 18.1307C20.4236 18.5212 20.4236 19.1544 20.0331 19.5449C19.6425 19.9355 19.0094 19.9355 18.6189 19.5449L0.941179 1.86726C0.550655 1.47674 0.550655 0.843574 0.94118 0.45305Z" fill="white"/>
+                                        <path d="M0.933518 19.5488C0.542994 19.1582 0.542994 18.5251 0.933518 18.1345L18.6112 0.456871C19.0017 0.0663466 19.6349 0.0663471 20.0254 0.456871C20.4159 0.847396 20.4159 1.48056 20.0254 1.87108L2.34773 19.5488C1.95721 19.9393 1.32404 19.9393 0.933518 19.5488Z" fill="white"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

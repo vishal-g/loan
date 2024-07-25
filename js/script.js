@@ -66,4 +66,50 @@ document.addEventListener("DOMContentLoaded", function () {
         updateRangeBackground(range)
         range.addEventListener('input', () => updateRangeBackground(range));
     });   
+
+
+
+    const popupBtn = document.querySelectorAll('.popup-btn');
+    const applyonline = document.querySelector('.applyonline');
+    popupBtn.forEach(btn => {
+        btn.addEventListener('click', function() {
+            applyonline.classList.toggle('active');
+            body.classList.toggle('no-scroll');
+        });
+    });
+
+
+
+
+    const selects = document.querySelectorAll('.custom-select');
+
+    if(selects){
+        selects.forEach(select => {
+            const selected = select.querySelector('.select-selected');
+            const items = select.querySelector('.select-items');
+            const input = select.querySelector('input');
+    
+            selected.addEventListener('click', () => {
+                items.classList.toggle('select-hide');
+                selected.classList.toggle('select-arrow-active');
+            });
+    
+            items.addEventListener('click', e => {
+                if (e.target && e.target.nodeName === 'DIV') {
+                    selected.textContent = e.target.textContent;
+                    input.value = e.target.getAttribute('data-value');
+                    items.classList.add('select-hide');
+                    selected.classList.remove('select-arrow-active');
+                }
+            });
+    
+            document.addEventListener('click', e => {
+                if (!select.contains(e.target)) {
+                    items.classList.add('select-hide');
+                    selected.classList.remove('select-arrow-active');
+                }
+            });
+        });
+    }    
+
 });
