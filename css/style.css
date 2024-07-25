@@ -3133,13 +3133,13 @@ main.main{
     padding: 20px;
     position: fixed;
     overflow: hidden;
-    z-index: 999;
     width: 100%;
     height: 100%;
     inset: 0;
     transition: all 0.4s ease;
     opacity: 0;
     pointer-events: none;
+    z-index: 101;
 }
 .videobanner-video::before{
     content: '';
@@ -3717,6 +3717,7 @@ main.main{
 }
 .hero-bank ~ .choice{
     margin-top: 63px;
+    z-index: 0;
 }
 @media (max-width: 480px) {
     .hero-bank ~ .choice {
@@ -3726,8 +3727,6 @@ main.main{
 }
 .we {
     margin-top: -60px;
-    position: relative;
-    z-index: 2;
     margin-bottom: 100px;
 }
 .we__inner{
@@ -5187,17 +5186,17 @@ li.cards-about__descr::before{
     position: fixed;
     inset: 0;
     z-index: 90;
-    background: #F2F5FF;
     overflow-y: auto;
     opacity: 0;
     pointer-events: none;
     transition: all .2s ease;
+    z-index: 101;
 }
 .applyonline::before{
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url('../img/axix-bg.svg');
+    background: rgba(0, 0, 0, 0.6);
     background-position: center;
 }
 .applyonline.active{
@@ -5239,6 +5238,14 @@ li.cards-about__descr::before{
 .applyonline__form-btn{
     margin-top: -4px;
     max-width: 125px;
+}
+.applyonline__close{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
 }
 @media (max-width: 480px) {
     .applyonline__form{
